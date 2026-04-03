@@ -1,5 +1,5 @@
 import type {Response , NextFunction} from "express";
-import type { AuthRequest } from "./authenticate";
+import type { AuthRequest } from "./authenticate.ts";
 
 export const authorize = (...allowedRoles: string[]) => {
     return (req: AuthRequest, res: Response, next: NextFunction) => {
