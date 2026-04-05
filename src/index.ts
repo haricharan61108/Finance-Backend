@@ -6,6 +6,8 @@ import cors from "cors";
 import rateLimit from "express-rate-limit";
 import authRoutes from "./modules/routes/auth.routes.ts";
 import financeRoutes from "./modules/routes/finance.routes.ts";
+import userRoutes from "./modules/routes/user.routes.ts";
+import analyticsRoutes from "./modules/routes/analytics.routes.ts";
 
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -25,6 +27,8 @@ app.get("/", (req, res) => {
 app.use("/auth/login", authLimiter);
 app.use("/auth", authRoutes);
 app.use("/records", financeRoutes);
+app.use("/users", userRoutes);
+app.use("/analytics", analyticsRoutes);
 
 const PORT = process.env.PORT || 3001;
 

@@ -6,15 +6,17 @@ import { updateUserRole, updateUserStatus } from "../controllers/user.controller
 const router = Router();
 
 router.patch(
-    "/:id/role",
-    authenticate,
-    authorize("ADMIN"),
-    updateUserRole
-  );
+  "/:id/role",
+  authenticate,
+  authorize("ADMIN"),
+  updateUserRole
+);
 
-  router.patch(
-    "/:id/status",
-    authenticate,
-    authorize("ADMIN"),
-    updateUserStatus
-  );
+router.patch(
+  "/:id/status",
+  authenticate,
+  authorize("ADMIN"),
+  updateUserStatus
+);
+
+export default router;
